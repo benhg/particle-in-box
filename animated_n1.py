@@ -12,7 +12,7 @@ x_list = np.linspace(0,1,100)
 L = 1
 
 def psi(n, L, x, t):
-    time_dependent_bit = np.exp(-1j * (n/hbar) * t)
+    time_dependent_bit = np.exp(-1j * (100.) * t)
 
     total_func = (np.sqrt(2/L)*np.sin(n*np.pi*x/L) ) * (time_dependent_bit)
     return total_func
@@ -25,9 +25,9 @@ fig = plt.figure(figsize=(15,10))
 plt.suptitle("Wave Function Modulus Squared", fontsize=18)
 ims = []
 
-for t in np.linspace(0, 10, 1000):
+for t in np.linspace(0, 10, 10):
     psi_2_list = [0]*100
-    for n in range(3):
+    for n in range(2):
         temp_list = []
         for x in np.linspace(0, L, 100):
             temp_list.append(psi_2(n, L, x, t))
